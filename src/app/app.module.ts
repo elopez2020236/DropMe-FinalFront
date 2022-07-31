@@ -17,6 +17,11 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { SolicitudComponent } from './components/solicitud/solicitud.component';
 import { GeneralProComponent } from './components/general-pro/general-pro.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from 'src/environments/environment';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,7 @@ import { GeneralProComponent } from './components/general-pro/general-pro.compon
     DetalleProductoComponent,
     SolicitudComponent,
     GeneralProComponent,
+    ChatComponent,
 
   ],
   imports: [
@@ -38,6 +44,9 @@ import { GeneralProComponent } from './components/general-pro/general-pro.compon
     HttpClientModule,
     FormsModule,
     ChartsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule
   ],
   providers: [
     UsuarioService,
