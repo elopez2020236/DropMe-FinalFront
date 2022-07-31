@@ -74,14 +74,12 @@
                         <label for="inputFotos" class="form-label ">Foto Producto</label>
                         <input type="text " id="inputFotos" class="form-control " name="fotos" #fotos="ngModel" [(ngModel)]="productosModelPost.fotos">
                     </div>
-                    <!--        <div class="mg-3 ">
-                        <label for="inputFactura " class="form-label ">Id Factura</label>
-                        <input type="text " id="inputFactura" class="form-control " name="idFactura" #idFactura="ngModel" [(ngModel)]="productosModelPost.idFactura">
-                    </div>
-                    <div class="mg-3 ">
-                        <label for="inputUsuario" class="form-label ">Id Usuario</label>
-                        <input type="text " id="inputUsuario" class="form-control " name="idUsuario" #idUsuario="ngModel" [(ngModel)]="productosModelPost.idUsuario">
-                    </div>  -->
+                    <br>
+                            <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)" id="inputFile">
+                            <label for="inputFile" class="labelImg">
+                                <img width="50rem" src="https://byspel.com/wp-content/uploads/2017/01/upload-cloud.png" alt="">
+                            </label>
+
                 </form>
 
             </div>
@@ -120,6 +118,8 @@
                 <label for="inputFotos" class="form-label ">Foto Producto</label>
                 <input type="text " class="form-control" id="inputFotos" name="fotos" #fotos="ngModel" [(ngModel)]="productosModelGetId.fotos">
             </div>
+
+            <input type="file">
 
             <button type="submit" class="btn btn-success" (click)="putProducto()" data-bs-dismiss="offcanvas">Guardar Cambios</button>
         </form>
