@@ -16,6 +16,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { SolicitudComponent } from './components/solicitud/solicitud.component';
+import { GeneralProComponent } from './components/general-pro/general-pro.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SolicitudComponent } from './components/solicitud/solicitud.component';
     ProductosComponent,
     DetalleProductoComponent,
     SolicitudComponent,
+    GeneralProComponent,
 
   ],
   imports: [

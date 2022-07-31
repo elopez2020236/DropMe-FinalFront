@@ -18,9 +18,13 @@ export class ProductosService {
   //Funcion Obtener productos
   obtenerProductos(token) : Observable<any> {
 
-    return this._http.get(this.url + '/obtenerProductos', { headers: this.headersVariable });
+    return this._http.get(this.url + '/obtenerProductosLog', { headers: this.headersVariable });
   }
 
+  obtenerProductosPro(token) : Observable<any> {
+
+    return this._http.get(this.url + '/obtenerProductos', { headers: this.headersVariable });
+  }
 
   //Obtener un producto en espercífico
   obtenerProductoId(idProducto, token): Observable<any> {
