@@ -7,13 +7,11 @@ import { StorageService } from 'src/app/services/storage.service';
 
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.scss'],
-  providers: [ProductosService, UsuarioService]
+  selector: 'app-general-pro',
+  templateUrl: './general-pro.component.html',
+  styleUrls: ['./general-pro.component.scss']
 })
-
-export class ProductosComponent implements OnInit {
+export class GeneralProComponent implements OnInit {
 
   public productosModelGet: Productos;
   public productosModelPost: Productos;
@@ -40,7 +38,7 @@ export class ProductosComponent implements OnInit {
 
   //Funcion Obtener Productos
   getProductos() {
-    this._productosService.obtenerProductos(this.token).subscribe(
+    this._productosService.obtenerProductosPro(this.token).subscribe(
       (response) => {
 
         this.productosModelGet = response.productos;
