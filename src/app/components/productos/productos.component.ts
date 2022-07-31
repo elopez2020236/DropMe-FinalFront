@@ -52,7 +52,7 @@ export class ProductosComponent implements OnInit {
     )
   }
 
-  // Funcion para editar productos
+
   getProductosId(idProducto){
     this._productosService.obtenerProductoId(idProducto, this.token).subscribe (
       (response) => {
