@@ -1,0 +1,127 @@
+<div class="container px-5 my-5">
+
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+            <div class="text-center">
+                <h2 class="fw-bolder">Conoce a todos los productos</h2>
+                <p class="lead fw-normal text-muted mb-5">Mantente al día y conoce todos lo productos disponibles</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Button Agregar Modal -->
+    <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#agregarProducto">
+    Agregar un nuevo producto
+   </button>
+
+    <!-- "Cards" Obtener Habitaciones -->
+    <div class="row gx-5">
+
+        <div class="col-lg-4 mb-5" *ngFor="let prod of productosModelGet">
+
+            <div class="card h-100 shadow border-0">
+                <img class="card-img-top" src="https://unade.edu.mx/wp-content/uploads/2019/12/calidad.png" alt="...">
+                <div class="card-body p-4">
+                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ prod.nombre }}</div>
+                    <h5 class="card-title mb-3">{{ prod.nombre}}</h5>
+                    <p class="card-text mb-0">
+                        Su precio es de Q {{ prod.precio }}.00.
+                    </p>
+                    <p class="card-text mb-0">
+                        Pertenece a la categoría de "{{ prod.categoria }}".
+                    </p>
+                    <!--   <p class="card-text mb-0">
+                        Id de factura {{ prod.idFactura }}, Id de Usuario {{ prod.idUsuario }}.
+                    </p>  -->
+                </div>
+                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                    <div class="d-flex align-items-end justify-content-between">
+                        <button type="button" class="btn btn-warning" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" (click)=" getProductosId(prod._id)">Editar</button>
+                        <button type="button" class="btn btn-success" [routerLink]="['/detalleProducto', prod._id]">Ver</button>
+                        <button type="button" class="btn btn-danger" (click)="deleteProducto(prod._id)">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- "Modal" Agregar Habitacion -->
+<div class="modal fade" id="agregarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar un Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form>
+                    <div class="mg-3">
+                        <label for="inputNombre" class="form-label">Nombre</label>
+                        <input type="text" id="inputNombre" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="productosModelPost.nombre">
+                    </div>
+                    <div class="mg-3">
+                        <label for="inputCategoria" class="form-label">Categoría</label>
+                        <input type="text" id="inputCategoria" class="form-control" name="categoria" #categoria="ngModel" [(ngModel)]="productosModelPost.categoria">
+                    </div>
+                    <div class=" mg-3 ">
+                        <label for="inputPrecio " class="form-label ">Precio</label>
+                        <input type="text " id="inputPrecio" class="form-control " name="precio" #precio="ngModel" [(ngModel)]="productosModelPost.precio">
+                    </div>
+                    <div class="mg-3 ">
+                        <label for="inputFotos" class="form-label ">Foto Producto</label>
+                        <input type="text " id="inputFotos" class="form-control " name="fotos" #fotos="ngModel" [(ngModel)]="productosModelPost.fotos">
+                    </div>
+                    <!--        <div class="mg-3 ">
+                        <label for="inputFactura " class="form-label ">Id Factura</label>
+                        <input type="text " id="inputFactura" class="form-control " name="idFactura" #idFactura="ngModel" [(ngModel)]="productosModelPost.idFactura">
+                    </div>
+                    <div class="mg-3 ">
+                        <label for="inputUsuario" class="form-label ">Id Usuario</label>
+                        <input type="text " id="inputUsuario" class="form-control " name="idUsuario" #idUsuario="ngModel" [(ngModel)]="productosModelPost.idUsuario">
+                    </div>  -->
+                </form>
+
+            </div>
+            <div class="modal-footer ">
+                <button type="button " class="btn btn-secondary " data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary " data-bs-dismiss="modal" (click)="postProductos()">Agregar producto</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- "OffCanvas" Editar Habitacion -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Editar Producto</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form>
+            <div class="mg-3">
+                <label for="inputNombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="inputNombre" name="nombre" #nombre="ngModel" [(ngModel)]="productosModelGetId.nombre">
+            </div>
+            <div class="mg-3">
+                <label for="inputCategoria" class="form-label">Categoría</label>
+                <input type="text" class="form-control" id="inputCategoria" name="categoria" #categoria="ngModel" [(ngModel)]="productosModelGetId.categoria">
+            </div>
+            <div class=" mg-3 ">
+                <label for="inputPrecio " class="form-label">Precio</label>
+                <input type="text " class="form-control" id="inputPrecio" name="precio" #precio="ngModel" [(ngModel)]="productosModelGetId.precio">
+            </div>
+            <div class="mg-3 ">
+                <label for="inputFotos" class="form-label ">Foto Producto</label>
+                <input type="text " class="form-control" id="inputFotos" name="fotos" #fotos="ngModel" [(ngModel)]="productosModelGetId.fotos">
+            </div>
+
+            <button type="submit" class="btn btn-success" (click)="putProducto()" data-bs-dismiss="offcanvas">Guardar Cambios</button>
+        </form>
+    </div>
+</div>

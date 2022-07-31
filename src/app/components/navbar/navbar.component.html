@@ -1,0 +1,74 @@
+<div class="header-inner bg-dark">
+    <div class="container-fluid px-lg-5">
+        <nav class="navbar navbar-expand-lg my-navbar">
+            <a class="navbar-brand" routerLink="home">
+                <span class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080"
+          zoomAndPan="magnify" viewBox="0 0 810 809.999993" height="1080" preserveAspectRatio="xMidYMid meet"
+          version="1.0" class="img-fluid" style="width:50px; margin:-3px 0px 0px 0px;">
+          <defs>
+            <filter x="0%" y="0%" width="100%" height="100%" id="id1">
+              <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" color-interpolation-filters="sRGB" />
+            </filter>
+            <filter x="0%" y="0%" width="100%" height="100%" id="id2">
+              <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.2126 0.7152 0.0722 0 0"
+                color-interpolation-filters="sRGB" />
+            </filter>
+            <image x="0" y="0" width="1052"
+              id="id3" height="992" preserveAspectRatio="xMidYMid meet" />
+            <mask id="id4">
+              <g filter="url(#id1)">
+                <g filter="url(#id2)" transform="matrix(0.61597, 0, 0, 0.615423, 80.999999, 99.630015)">
+                  <image x="0" y="0" width="1052"
+
+                    height="992" preserveAspectRatio="xMidYMid meet" />
+                </g>
+              </g>
+            </mask>
+            <image x="0" y="0" width="1052"
+
+              id="id5" height="992" preserveAspectRatio="xMidYMid meet" />
+          </defs>
+          <g mask="url(#id4)">
+            <g transform="matrix(0.61597, 0, 0, 0.615423, 80.999999, 99.630015)">
+              <image x="0" y="0" width="1052"
+
+                height="992" preserveAspectRatio="xMidYMid meet" />
+            </g>
+          </g>
+        </svg>
+       DropMe</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"><i class="fas fa-bars" style="margin:5px 0px 0px 0px;"></i></span>
+</button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" routerLink="/inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/">DROP-ME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/productos">Productos</a>
+                    </li>
+                    <li *ngIf="role === 'ADMIN'" class="nav-item">
+                        <a class="nav-link" routerLink="usuarios">Ver Usuarios</a>
+                    </li>
+
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+                    <button *ngIf="role ==='Usuario'" class="btn" routerLink="perfil">Perfil</button>
+                    <button *ngIf="!isAuthenticated" class="btn" routerLink="sign-up">Registrarse</button>
+                    <button *ngIf="!isAuthenticated" class="btn" routerLink="sign-in">Login</button>
+                    <button *ngIf="isAuthenticated" class="btn" routerLink="sign-in" (click)="VaciarToken()">Cerrar Sesión</button>
+
+                </form>
+            </div>
+        </nav>
+
+    </div>
+</div>
