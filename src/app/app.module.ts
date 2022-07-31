@@ -15,6 +15,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
+import { SolicitudComponent } from './components/solicitud/solicitud.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DetalleProductoComponent } from './components/detalle-producto/detalle-
     SignInComponent,
     ProductosComponent,
     DetalleProductoComponent,
+    SolicitudComponent,
 
   ],
   imports: [
