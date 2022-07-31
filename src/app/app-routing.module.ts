@@ -6,17 +6,19 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { SolicitudComponent } from './components/solicitud/solicitud.component'
+import { SolicitudComponent } from './components/solicitud/solicitud.component';
+import {UsuarioComponent} from './components/usuario/usuario.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'sign-in', component: SignInComponent },
-  { path: 'sign-up', component: SignUpComponent },  
+  { path: 'sign-up', component: SignUpComponent },
   { path: 'generalPro', component: GeneralProComponent },
   { path: 'solicitud', component: SolicitudComponent },
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'productos', component: ProductosComponent},
-  { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent}
+  { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent},
+  { path: 'usuario', component: UsuarioComponent }
 
 ];
 

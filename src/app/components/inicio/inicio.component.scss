@@ -1,8 +1,10 @@
 footer {
 	background-color:#1A1A1A;
-	height: 50%;
   color: white;
-  padding: 15px;
+  padding: 5px;
+  bottom: 0;
+  left: 0;
+  width:  100%;
 }
 
 .main1 {
@@ -10,9 +12,6 @@ footer {
   margin:0 auto;
 }
 
-a img:hover {
-    color: #fff;
-}
 
 .text {
 
@@ -22,6 +21,20 @@ a img:hover {
 .buttonCenter{
   justify-content: center;
   align-items: center;
-  
+
 
 }
+.map-container{
+  overflow:hidden;
+  padding-bottom:56%;
+  position:relative;
+  height:0;
+}
+.map-container iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
