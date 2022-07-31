@@ -14,7 +14,7 @@ export class ChatComponent implements OnInit {
   chats: Observable<any[]>;
   elemento: any
 
-  constructor(firestore: AngularFirestore, public sChat: ChatService) {
+  constructor(firestore: AngularFirestore, public sChat: ChatService, ) {
     this.chats = firestore.collection('chats').valueChanges();
     this.sChat.cargarMensajes().subscribe(()=>{
       setTimeout(()=>{
@@ -27,6 +27,8 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
     this.elemento = document.getElementById('app-mensajes')
   }
+
+  
   
   enviar_mensaje(){
     console.log(this.mensaje);
