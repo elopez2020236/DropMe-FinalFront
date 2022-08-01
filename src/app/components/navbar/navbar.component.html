@@ -48,7 +48,7 @@
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/solicitud">Solicitud</a>
                     </li>
-                    
+
                     <li class="nav-item">
                       <a class="nav-link" routerLink="/generalPro">Explora</a>
                   </li>
@@ -57,10 +57,10 @@
                     </li>
 
                 </ul>
-                
+
 
                 <form class="form-inline my-2 my-lg-0">
-                    <button *ngIf="role ==='Usuario'" class="btn" routerLink="perfil">Perfil</button>
+                    <button *ngIf="role ==='Usuario'" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>>
                     <button *ngIf="!isAuthenticated" class="btn" routerLink="sign-up">Registrarse</button>
                     <button *ngIf="!isAuthenticated" class="btn" routerLink="sign-in">Login</button>
                     <button *ngIf="isAuthenticated" class="btn" routerLink="sign-in" (click)="VaciarToken()">Cerrar Sesión</button>
@@ -71,3 +71,17 @@
 
     </div>
 </div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Perfil</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <img style="width: 100px; height: 100px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.icon-icons.com%2Ficons2%2F1580%2FPNG%2F512%2F2849831-account-avatar-interface-multimedia-person-profile-user_107987.png&f=1&nofb=1">
+      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button type="button" class="btn btn-danger" routerLink="/usuario">Cuenta</button>
+      <button type="button" class="btn btn-warning" routerLink="/solicitud">Solicitudes</button>
+      <button type="button" class="btn btn-success" routerLink="/productos">Mis Productos</button>
+    </div>
+  </div>

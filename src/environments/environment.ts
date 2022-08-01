@@ -12,6 +12,15 @@ export const environment = {
     messagingSenderId: "90415189062",
     appId: "1:90415189062:web:42414ca5f8cbe9c5030e47",
     measurementId: "G-VLGRWW07S9"
+  },
+  firebase: {
+    apiKey: "AIzaSyCmaGJMgg0YnmdvUjSSEf1CfbPCjSlK9kw",
+    authDomain: "dropme-486c7.firebaseapp.com",
+    projectId: "dropme-486c7",
+    storageBucket: "dropme-486c7.appspot.com",
+    messagingSenderId: "90415189062",
+    appId: "1:90415189062:web:42414ca5f8cbe9c5030e47",
+    measurementId: "G-VLGRWW07S9"
   }
 };
 
