@@ -32,6 +32,11 @@ export class ProductosService {
     return this._http.get(this.url + '/obterxId/' + idProducto, { headers: headersToken })
   }
 
+  obtenerOfertaId(idOferta, token): Observable<any> {
+    let headersToken = this.headersVariable.set('Authorization', token);
+    return this._http.get(this.url + '/obterxId/' + idOferta, { headers: headersToken })
+  }
+
   //Function Agregar producto
   agregarProductos(modeloProductos: Productos, token) : Observable<any> {
     let headersToken = this.headersVariable.set('Authorization', token);

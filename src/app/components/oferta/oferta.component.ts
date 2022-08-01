@@ -3,19 +3,21 @@ import { Productos } from 'src/app/models/productos.model';
 import { ProductosService } from 'src/app/services/productos.service';
 import { UsuarioService } from '../../services/usuario.service';
 import Swal from 'sweetalert2';
+import { environment, environment2 } from 'src/environments/environment';
 import { StorageService } from 'src/app/services/storage.service';
 
 
 @Component({
-  selector: 'app-general-pro',
-  templateUrl: './general-pro.component.html',
-  styleUrls: ['./general-pro.component.scss']
+  selector: 'app-oferta',
+  templateUrl: './oferta.component.html',
+  styleUrls: ['./oferta.component.scss'],
+  providers: [ProductosService, UsuarioService]
 })
-export class GeneralProComponent implements OnInit {
-
+export class OfertaComponent implements OnInit {
   public productosModelGet: Productos;
   public productosModelPost: Productos;
   public productosModelGetId: Productos;
+  idOferta;
   public token;
 
   constructor(
@@ -30,27 +32,14 @@ export class GeneralProComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    let idProducto = localStorage.getItem('idProducto');
-    localStorage.setItem("idProducto", idProducto);
     this.getProductos();
 
+    let idOferta = localStorage.getItem('idOferta');
+    localStorage.setItem("idOferta", idOferta);
   }
 
   //Funcion Obtener Productos
   getProductos() {
-    this._productosService.obtenerProductosPro(this.token).subscribe(
-      (response) => {
-
-        this.productosModelGet = response.productos;
-        console.log(response);
-      },
-      (error) => {
-        console.log(<any>error);
-      }
-    )
-  }
-
-  getProductosL() {
     this._productosService.obtenerProductos(this.token).subscribe(
       (response) => {
 
@@ -63,12 +52,12 @@ export class GeneralProComponent implements OnInit {
     )
   }
 
-  // Funcion para editar productos
-  getProductosId(idProducto){
-    this._productosService.obtenerProductoId(idProducto, this.token).subscribe (
+
+  getProductosId(idOferta){
+    this._productosService.obtenerProductoId(idOferta, this.token).subscribe (
       (response) => {
         console.log(response);
-        localStorage.setItem("idProducto", idProducto);
+        localStorage.setItem("idOferta", idOferta);
         this.productosModelGetId = response.producFined;
       },
       (error) => {
@@ -161,15 +150,11 @@ export class GeneralProComponent implements OnInit {
       this.storageService.subirImagen(nombre + "_" + Date.now(), reader.result).then(urlImagen=>{
         console.log(urlImagen);
       })
-    
+
     }
 
-  
+
   }
     }
-
-
-    
-
 
 }

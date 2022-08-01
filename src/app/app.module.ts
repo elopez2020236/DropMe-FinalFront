@@ -24,6 +24,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 import { ChatComponent } from './components/chat/chat.component';
 import { VerificacionComponent } from './components/verificacion/verificacion.component';
+import { OfertaComponent } from './components/oferta/oferta.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { VerificacionComponent } from './components/verificacion/verificacion.co
 
     ChatComponent,
       VerificacionComponent,
+      OfertaComponent,
 
   ],
   imports: [

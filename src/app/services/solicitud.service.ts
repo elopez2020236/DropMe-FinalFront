@@ -22,11 +22,11 @@ export class SolicitudService {
 
 
   //Function Agregar
-  solicitudes(idUsuario, modeloSolicitud: Solicitud): Observable<any> {
+  solicitudes(idProducto, idOferta, modeloSolicitud: Solicitud): Observable<any> {
 
     let parametros = JSON.stringify(modeloSolicitud);
 
-    return this._http.post(this.url + '/generarSolicitud/' + idUsuario, parametros, { headers: this.headersVariable});
+    return this._http.post(this.url + '/generarSolicitud/' + idProducto + '/' + idOferta, parametros, { headers: this.headersVariable});
   }
 
   aceptarSolicitud(modeloSolicitud: Solicitud): Observable<any> {

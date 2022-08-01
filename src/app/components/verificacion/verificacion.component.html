@@ -6,7 +6,6 @@
         <p>
             Verificar su cuenta para tradear
         </p>
-        <button type="button" class="btn btn-outline-secondary" (click)="ingresar('twitter')" *ngIf="!sChat.usuario.uid">Twitter</button>
-        <button type="button" class="btn btn-outline-success" (click)="ingresar('google')" *ngIf="!sChat.usuario.uid" routerLink="/solicitud">Google</button>
+        <button type="button" class="btn btn-outline-success" *ngIf="!sChat.usuario.uid" routerLink="/solicitud" (click)="postSolicitud(idProducto, idOferta)"  (click)="ingresar('google')">Google</button>
     </div>
 </div>

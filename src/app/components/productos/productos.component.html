@@ -15,10 +15,11 @@
 
     <!-- Button Agregar Modal -->
     <div class="text-center">
-    <button type="button" class="btn btn-outline-primary mb-2" data-bs-toggle="modal" data-bs-target="#agregarProducto">
-    Agregar un nuevo producto
-   </button>
-  </div>
+        <button type="button" class="btn btn-outline-primary mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Agregar un nuevo producto
+       </button>
+      </div>
+
     <!-- "Cards" Obtener Habitaciones -->
     <div class="row gx-5">
 
@@ -51,53 +52,36 @@
     </div>
 </div>
 </div>
-<!-- "Modal" Agregar Habitacion -->
-<div class="">
-<div class="modal fade" id="agregarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<!-- Modal AGREGAR SI FURULA -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar un Producto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-          </div>
-            <div class="modal-body">
-
-                <form>
-                    <div class="mg-3">
-                        <label for="inputNombre" class="form-label">Nombre</label>
-                        <input type="text" id="inputNombre" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="productosModelPost.nombre">
-                    </div>
-                    <div class="mg-3">
-                        <label for="inputCategoria" class="form-label">Categoría</label>
-                        <input type="text" id="inputCategoria" class="form-control" name="categoria" #categoria="ngModel" [(ngModel)]="productosModelPost.categoria">
-                    </div>
-                    <div class=" mg-3 ">
-                        <label for="inputPrecio " class="form-label ">Precio</label>
-                        <input type="text " id="inputPrecio" class="form-control " name="precio" #precio="ngModel" [(ngModel)]="productosModelPost.precio">
-                    </div>
-                    <div class="mg-3 ">
-                        <label for="inputFotos" class="form-label ">Foto Producto</label>
-                        <input type="text " id="inputFotos" class="form-control " name="fotos" #fotos="ngModel" [(ngModel)]="productosModelPost.fotos">
-                    </div>
-                    <br>
-                            <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)" id="inputFile">
-                            <label for="inputFile" class="labelImg">
-                                <img width="50rem" src="https://byspel.com/wp-content/uploads/2017/01/upload-cloud.png" alt="">
-                            </label>
-
-                </form>
-
-            </div>
-            <div class="modal-footer ">
-                <button type="button " class="btn btn-secondary " data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary " data-bs-dismiss="modal" (click)="postProductos()">Agregar producto</button>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <div class="mg-3">
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input type="text" id="inputNombre" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="productosModelPost.nombre">
+        </div>
+        <div class="mg-3">
+            <label for="inputCategoria" class="form-label">Categoría</label>
+            <input type="text" id="inputCategoria" class="form-control" name="categoria" #categoria="ngModel" [(ngModel)]="productosModelPost.categoria">
+        </div>
+        <div class=" mg-3 ">
+            <label for="inputPrecio " class="form-label ">Precio</label>
+            <input type="text " id="inputPrecio" class="form-control " name="precio" #precio="ngModel" [(ngModel)]="productosModelPost.precio">
+        </div>
+        </div>
+        <div class="modal-footer ">
+          <button type="button " class="btn btn-secondary " data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary " data-bs-dismiss="modal" (click)="postProductos()">Agregar producto</button>
+      </div>
+      </div>
     </div>
-</div>
-
-
+  </div>
 
 
 <!-- "OffCanvas" Editar Habitacion -->

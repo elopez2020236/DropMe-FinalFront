@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { GeneralProComponent } from './components/general-pro/general-pro.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { OfertaComponent } from './components/oferta/oferta.component';
 import { PantallaCargaComponent } from './components/pantalla-carga/pantalla-carga.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'pantallaCarga', component:  PantallaCargaComponent},
   { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent},
   { path: 'verificacion', component: VerificacionComponent},
+  { path: 'oferta', component: OfertaComponent},
 
   { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent},
   { path: 'usuario', component: UsuarioComponent }

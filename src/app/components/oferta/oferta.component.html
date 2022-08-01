@@ -1,0 +1,42 @@
+<div class="bg-dark py-5">
+    <div class="container px-5 my-5 ">
+    
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <div class="text-center">
+                    <h2 class="display-5 fw-bolder text-white mb-2">Mis Productos</h2>
+                    <p class="lead fw-normal text-white-50 mb-7">Tus productos que puedes intercambiar</p>
+                    <p class="lead fw-normal text-white-50 mb-4">¡Añade uno más!</p>
+    
+                  </div>
+            </div>
+        </div>
+    
+    
+      </div>
+        <!-- "Cards" Obtener Habitaciones -->
+        <div class="row gx-5">
+    
+            <div class="col-lg-4 mb-5" *ngFor="let prod of productosModelGet">
+    
+                <div class="card h-100 shadow border-0">
+                    <img class="card-img-top" src="https://unade.edu.mx/wp-content/uploads/2019/12/calidad.png" alt="...">
+                    <div class="card-body p-4">
+                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ prod.nombre }}</div>
+                        <h5 class="card-title mb-3">{{ prod.nombre}}</h5>
+                        <p class="card-text mb-0">
+                            Su precio es de Q {{ prod.precio }}.00.
+                        </p>
+                        <p class="card-text mb-0">
+                            Pertenece a la categoría de "{{ prod.categoria }}".
+                        </p>
+                    </div>
+                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                        <div class="d-flex align-items-end justify-content-between">
+                            <button type="button" class="btn btn-success" (click)="getProductosId(prod._id)" routerLink="/verificacion">Ofertar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
