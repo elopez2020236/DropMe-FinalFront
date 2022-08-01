@@ -17,6 +17,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { SolicitudComponent } from './components/solicitud/solicitud.component';
 import { GeneralProComponent } from './components/general-pro/general-pro.component';
+import { PantallaCargaComponent } from './components/pantalla-carga/pantalla-carga.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -35,6 +36,8 @@ import { ChatComponent } from './components/chat/chat.component';
     DetalleProductoComponent,
     SolicitudComponent,
     GeneralProComponent,
+    PantallaCargaComponent,
+
     ChatComponent,
 
   ],

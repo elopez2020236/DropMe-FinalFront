@@ -1,17 +1,18 @@
 <div class="row gx-5">
 
-    <div class="col-lg-4 mb-5" *ngFor="let prod of productosModelGet">
+    <div class="col-lg-4 mb-5" >
 
         <div class="card h-100 shadow border-0">
             <img class="card-img-top" src="https://unade.edu.mx/wp-content/uploads/2019/12/calidad.png" alt="...">
             <div class="card-body p-4">
-                <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ prod.nombre }}</div>
-                <h5 class="card-title mb-3">{{ prod.nombre}}</h5>
+                <div class="badge bg-primary bg-gradient rounded-pill mb-2"></div>
+                <h5 class="card-title mb-3"></h5>
                 <p class="card-text mb-0">
-                    Su precio es de Q {{ prod.precio }}.00.
+                    Su precio es de Q .{{productosModelGet.precio}}.
                 </p>
                 <p class="card-text mb-0">
-                    Pertenece a la categoría de "{{ prod.categoria }}".
+                    Su nombre es  "{{productosModelGet.nombre}}
+                    ".
                 </p>
                 <!--   <p class="card-text mb-0">
                     Id de factura {{ prod.idFactura }}, Id de Usuario {{ prod.idUsuario }}.
@@ -19,9 +20,6 @@
             </div>
             <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                 <div class="d-flex align-items-end justify-content-between">
-                    <button type="button" class="btn btn-warning" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" (click)=" getProductosId(prod._id)">Editar</button>
-                    <button type="button" class="btn btn-success" [routerLink]="['/detalleProducto', prod._id]">Ver</button>
-                    <button type="button" class="btn btn-danger" (click)="deleteProducto(prod._id)">Eliminar</button>
                 </div>
             </div>
         </div>
