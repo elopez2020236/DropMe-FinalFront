@@ -37,7 +37,8 @@
                 </div>
                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                     <div class="d-flex align-items-end justify-content-between">
-                        <button type="button" class="btn btn-outline-success" [routerLink]="['/detalleProducto', prod._id]">Ver</button>
+                        <button type="button" class="btn btn-outline-success" routerLink="/pantallaCarga" (click)="getProductosId(prod._id)"
+                        >Ver</button>
                         <button type="button" class="btn btn-outline-danger" routerLink="/solicitud">Solicitud</button>
                     </div>
                 </div>

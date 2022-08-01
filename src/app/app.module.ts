@@ -17,6 +17,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { SolicitudComponent } from './components/solicitud/solicitud.component';
 import { GeneralProComponent } from './components/general-pro/general-pro.component';
+import { PantallaCargaComponent } from './components/pantalla-carga/pantalla-carga.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { GeneralProComponent } from './components/general-pro/general-pro.compon
     DetalleProductoComponent,
     SolicitudComponent,
     GeneralProComponent,
+    PantallaCargaComponent,
 
   ],
   imports: [

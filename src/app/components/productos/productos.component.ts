@@ -3,6 +3,7 @@ import { Productos } from 'src/app/models/productos.model';
 import { ProductosService } from 'src/app/services/productos.service';
 import { UsuarioService } from '../../services/usuario.service';
 import Swal from 'sweetalert2';
+import { environment, environment2 } from 'src/environments/environment';
 import { StorageService } from 'src/app/services/storage.service';
 
 
@@ -150,15 +151,15 @@ export class ProductosComponent implements OnInit {
       this.storageService.subirImagen(nombre + "_" + Date.now(), reader.result).then(urlImagen=>{
         console.log(urlImagen);
       })
-    
+
     }
 
-  
+
   }
     }
 
 
-    
+
 
 
 }
