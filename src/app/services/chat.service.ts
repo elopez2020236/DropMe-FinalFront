@@ -79,7 +79,7 @@ export class ChatService {
       mensaje: texto,
       nombre: JSON.parse(identidad).nombre,
       fecha: new Date().getTime(),
-      _id: JSON.parse(identidad)._id
+      uid: JSON.parse(identidad)._id
     }
     
     return this.itemsCollection.add(mensaje)  

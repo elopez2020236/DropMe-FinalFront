@@ -6,15 +6,14 @@
     <div class="chat-window">
         <div class="app-mensajes" id="app-mensajes">
 
-            <div *ngFor="let chat of sChat.chats"
-                [ngClass]="{'text-end': sChat.usuario._id == chat._id}">
-                <span class="badge" 
-                    [ngClass]="{'badge-primary': sChat.usuario._id == chat._id, 
-                    'badge-success': sChat.usuario._id != chat._id}"
-                    
-                    >{{chat.nombre}}</span>
-                <p>
-                    {{chat.mensaje}}
+            <div class="fs-5" *ngFor="let chats of sChat.chats"
+            [ngClass]="{'text-center': sChat.usuario._id == chats._id}">
+                <p class="badge fs-4" [ngClass]="{'bg-success': sChat.usuario._id == chats._id}">
+                        <!-- [ngClass]="{'text-center': chats._id == sChat.usuario._id}"> -->
+                    {{chats.nombre}} :
+                </p>
+                <p class="badge fs-5" [ngClass]="{'text-end': sChat.usuario._id == chats._id}">
+                    {{chats.mensaje}}
                 </p>
             </div>
 
