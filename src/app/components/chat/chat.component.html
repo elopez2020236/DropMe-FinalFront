@@ -1,0 +1,20 @@
+    
+    
+<div class=" container main-container">
+    <h1>DropMe!</h1>
+    <h2>Chat</h2>
+    <div class="chat-window">
+        <div class="app-mensajes" id="app-mensajes">
+
+            <div class="text-end" *ngFor="let chat of sChat.chats">
+                <span class="badge rounded-pill bg-dark">Pepe</span>
+                <p>
+                    {{chat.mensaje}}
+                </p>
+            </div>
+
+        </div>  
+        <input type="text" name="mensaje" [(ngModel)]="mensaje" placeholder="Enviar" (keyup.enter)="enviar_mensaje()">
+
+    </div>  
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dropme-486c7": {
+      "hosting": {
+        "DropmeAngular": [
+          "dropme-486c7"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dropme-486c7"
+  }
+}
