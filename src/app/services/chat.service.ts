@@ -12,7 +12,7 @@ import firebase from 'firebase/compat/app';
   providedIn: 'root'
 })
 export class ChatService {
-  public url: String = 'https://dropmee.herokuapp.com/api';
+  public url: String = 'http://localhost:3000/api';
   private itemsCollection: AngularFirestoreCollection<Mensaje>;
  // public perfilModelGet: Usuario;
   public token;
