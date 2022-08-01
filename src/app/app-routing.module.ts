@@ -12,7 +12,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SolicitudComponent } from './components/solicitud/solicitud.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { VerificacionComponent } from './components/verificacion/verificacion.component';
-
+import { FichaComponent } from './components/ficha/ficha.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'verificacion', component: VerificacionComponent},
   { path: 'oferta', component: OfertaComponent},
   { path: 'confirmacion', component: ConfirmacionComponent},
-
+  { path: 'ficha', component: FichaComponent},
   { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent},
   { path: 'usuario', component: UsuarioComponent }
 
