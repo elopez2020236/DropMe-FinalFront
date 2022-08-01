@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Productos } from 'src/app/models/productos.model';
 import { ProductosService } from 'src/app/services/productos.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { StorageService } from 'src/app/services/storage.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,13 +17,16 @@ export class DetalleProductoComponent implements OnInit {
   public productosModelGet: Productos;
   public productosModelPost: Productos;
   public productosModelGetId: Productos;
+
   idProducto;
   public token;
 
   constructor(
     public _activatedRoute: ActivatedRoute,
     private _usuarioService: UsuarioService,
-    public _productosService: ProductosService
+    public _productosService: ProductosService,
+    private storageService: StorageService
+
   ) {
    this.productosModelPost = new Productos('','','','',[],[{}],{});
       this.productosModelGetId = new Productos('','','','',[],[{}],{});
@@ -56,12 +60,32 @@ export class DetalleProductoComponent implements OnInit {
     )
   }
 
+  //Imagenes
+  imagenes : any [] = [];
+  cargarImagen(event:any){
+    let archivos = event.target.files
+    let nombre = "Jeffer"
+    let urlImagen = "Img"
 
 
+      let reader = new FileReader();
+      reader.readAsDataURL(archivos[0]);
+      reader.onloadend = ()=>{
+      console.log(reader.result)
+      this.imagenes.push (reader.result)
+      this.storageService.subirImagen(nombre + "_" + Date.now(), reader.result).then(urlImagen=>{
+        console.log(urlImagen);
 
-  //Funcion Editar Producto
+     // urlImagen = localStorage.getItem('urlImagen');
+
+      localStorage.setItem("urlImagen", urlImagen);
+      console.log(localStorage.getItem('urlImagen'));
 
 
+      })
+
+  }
+    }
 
 }
 

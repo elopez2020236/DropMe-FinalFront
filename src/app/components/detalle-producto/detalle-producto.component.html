@@ -1,27 +1,43 @@
+<br>
+<div class="row gx-5 justify-content-center">
+  <div class="col-lg-8 col-xl-6">
+    <div class="text-center">
+      <h2 class="fw-bolder">Detalle del Producto</h2>
+      <p class="lead fw-normal text-muted mb-5"></p>
+    </div>
+  </div>
+</div>
+<br>
+<hr>
+<br>
 <div class="row gx-5">
 
-    <div class="col-lg-4 mb-5" >
+  <div class="col-lg-4 mb-5">
 
-        <div class="card h-100 shadow border-0">
-            <img class="card-img-top" src="https://unade.edu.mx/wp-content/uploads/2019/12/calidad.png" alt="...">
-            <div class="card-body p-4">
-                <div class="badge bg-primary bg-gradient rounded-pill mb-2"></div>
-                <h5 class="card-title mb-3"></h5>
-                <p class="card-text mb-0">
-                    Su precio es de Q .{{productosModelGet.precio}}.
-                </p>
-                <p class="card-text mb-0">
-                    Su nombre es  "{{productosModelGet.nombre}}
-                    ".
-                </p>
-                <!--   <p class="card-text mb-0">
+    <div class="card h-100 shadow border-0">
+      <img class="imagenesJeff" src="{{imagenes[0]}}">
+
+      <div class="card-body p-4">
+        <div class="badge bg-primary bg-gradient rounded-pill mb-2"></div>
+        <h5 class="card-title mb-3"></h5>
+        <p class="card-text mb-0">
+          Su precio es de Q .{{productosModelGet.precio}}.
+        </p>
+        <p class="card-text mb-0">
+          Su nombre es "{{productosModelGet.nombre}}".
+        </p>
+        <!--   <p class="card-text mb-0">
                     Id de factura {{ prod.idFactura }}, Id de Usuario {{ prod.idUsuario }}.
                 </p>  -->
-            </div>
-            <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                <div class="d-flex align-items-end justify-content-between">
-                </div>
-            </div>
+      </div>
+      <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="cargarImagen($event)" id="inputFile">
+      <label for="inputFile" class="labelImg">
+        <img width="50rem" src="https://byspel.com/wp-content/uploads/2017/01/upload-cloud.png" alt="">
+      </label>
+      <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+        <div class="d-flex align-items-end justify-content-between">
         </div>
+      </div>
     </div>
+  </div>
 </div>
