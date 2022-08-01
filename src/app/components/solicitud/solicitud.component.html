@@ -1,5 +1,6 @@
 <div>
-<div class="container">
+<div class="chat-window" *ngIf="sChat.usuario.uid">
+    <div class="container">
 
       <div class="cardnatu">
           <img src="img/img1.jpg">
@@ -14,10 +15,14 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
           <a href="#">Leer más</a>
       </div>
-      <app-chat></app-chat>
+
+     
+        <app-chat></app-chat>
+      
+      
   </div>
       <button type="button" class="btn btn-success">ACEPTAR</button>
       <button type="button" class="boton btn-success">RECHAZAR</button>
     </div>
 
-
+</div>

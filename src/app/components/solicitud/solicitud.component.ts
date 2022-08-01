@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Solicitud } from 'src/app/models/solicitud.model';
 import { SolicitudService } from 'src/app/services/solicitud.service';
 import { UsuarioService } from '../../services/usuario.service';
+import { ChatService } from 'src/app/services/chat.service';
 import Swal from 'sweetalert2';
 
 
@@ -20,7 +21,8 @@ export class SolicitudComponent implements OnInit {
 
   constructor(
     private _solicitudService: SolicitudService,
-    private _usuarioService: UsuarioService
+    private _usuarioService: UsuarioService,
+    public sChat: ChatService
   ) {
       this.solicitudModelPost = new Solicitud('',[],[],'');
       this.solicitudModelGetId = new Solicitud('',[],[],'');
@@ -30,6 +32,12 @@ export class SolicitudComponent implements OnInit {
   ngOnInit(): void {
     this.getSolicitud();
 
+  }
+
+  ingresar(proveedor: String) {
+    console.log(proveedor)
+    
+    this.sChat.login( proveedor );
   }
 
   getSolicitud() {

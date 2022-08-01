@@ -78,7 +78,8 @@ export class ChatService {
     let mensaje: Mensaje = {
       mensaje: texto,
       nombre: JSON.parse(identidad).nombre,
-      fecha: new Date().getTime()
+      fecha: new Date().getTime(),
+      _id: JSON.parse(identidad)._id
     }
     
     return this.itemsCollection.add(mensaje)  
