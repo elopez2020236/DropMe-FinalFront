@@ -1,15 +1,15 @@
-<app-chat></app-chat>
+
 <div class="bg-dark py-5">
   <div class="chat-window" *ngIf="sChat.usuario.uid">
-
+    <app-chat></app-chat>
 
 <div class="container">
 <div class="cardnatu">
 <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <div class="card-body" >
+    <h5 class="card-title">{{oferta[0].nombre}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{oferta[0].precio}}</h6> 
+    <p class="card-text">{{oferta[0].categoria}}</p>
  </div>
 </div>
 </div>
@@ -19,11 +19,9 @@
 <div class="cardnatu2">
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <h5 class="card-title">{{solicitado[0].nombre}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{solicitado[0].precio}}</h6> 
+    <p class="card-text">{{solicitado[0].categoria}}</p>
   </div>
 </div>
 </div>
@@ -31,7 +29,7 @@
 
 <div class="contenedorcharboton">
   <div class="contenedorbotonesalign">
-  <button type="button" class="btn btn-success">ACEPTAR</button>
+  <button type="button" class="btn btn-success" (click)="aceptarSolicitud(idSolicitud)">ACEPTAR</button>
 <button type="button" class="boton btn-success">RECHAZAR</button>
 </div>
 </div>

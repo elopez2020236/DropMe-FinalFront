@@ -6,6 +6,6 @@
         <p>
             Verificar su cuenta para tradear
         </p>
-        <button type="button" class="btn btn-outline-success" *ngIf="!sChat.usuario.uid" routerLink="/solicitud"  (click)="ingresar('google')">Google</button>
+        <button type="button" class="btn btn-outline-success" *ngIf="!sChat.usuario.uid" routerLink="/solicitud"  (click)="ingresar('google')" (click)="obtenerSolicitudesId(idSolicitud)">Google</button>
     </div>
 </div>

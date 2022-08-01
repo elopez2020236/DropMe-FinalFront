@@ -20,6 +20,10 @@ export class SolicitudService {
     return this._http.get(this.url + '/obtenerSolisLog', { headers: this.headersVariable });
   }
 
+  obtenerSolicitudesId(idSolicitudes, token): Observable<any> {
+    let headersToken = this.headersVariable.set('Authorization', token);
+    return this._http.get(this.url + '/obtenerSolisxid/' + idSolicitudes, { headers: headersToken })
+  }
 
   //Function Agregar
   solicitudes(idProducto, idOferta, modeloSolicitud: Solicitud): Observable<any> {
@@ -29,22 +33,19 @@ export class SolicitudService {
     return this._http.post(this.url + '/generarSolicitud/' + idProducto + '/' + idOferta, parametros, { headers: this.headersVariable});
   }
 
-  aceptarSolicitud(modeloSolicitud: Solicitud): Observable<any> {
-    let parametro = JSON.stringify(modeloSolicitud);
-
-    return this._http.put(this.url + '/aceptarSoli/' + modeloSolicitud._id, parametro, { headers: this.headersVariable})
+  aceptarSolicitud(idSolicitud, token): Observable<any> {
+    let headersToken = this.headersVariable.set('Authorization', token);
+    return this._http.put(this.url + '/aceptarSoli/' + idSolicitud, { headers: headersToken})
   }
 
-  confirmarTrato(modeloSolicitud: Solicitud): Observable<any> {
-    let parametro = JSON.stringify(modeloSolicitud);
-
-    return this._http.put(this.url + '/aceptarTratos/' + modeloSolicitud._id, parametro, { headers: this.headersVariable})
+  confirmarTrato(idTrato, token): Observable<any> {
+    let headersToken = this.headersVariable.set('Authorization', token);
+    return this._http.put(this.url + '/aceptarTratos/' + idTrato, { headers: headersToken})
   }
 
-  cancelarSoli(modeloSolicitud: Solicitud): Observable<any> {
-    let parametro = JSON.stringify(modeloSolicitud);
-
-    return this._http.put(this.url + '/rechazarSolicitud/' + modeloSolicitud._id, parametro, { headers: this.headersVariable})
+  cancelarSoli(idSolicitud, token): Observable<any> {
+    let headersToken = this.headersVariable.set('Authorization', token);
+    return this._http.put(this.url + '/rechazarSolicitud/' + idSolicitud, { headers: headersToken})
   }
 
 

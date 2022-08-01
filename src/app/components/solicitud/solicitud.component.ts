@@ -18,34 +18,72 @@ export class SolicitudComponent implements OnInit {
   public solicitudModelPost: Solicitud;
   public solicitudModelGetId: Solicitud;
   public token;
+  public oferta = [];
+  public solicitado = [];
 
   constructor(
     private _solicitudService: SolicitudService,
     private _usuarioService: UsuarioService,
     public sChat: ChatService
   ) {
+      this.solicitudModelGet = new Solicitud('',[],[],'');
       this.solicitudModelPost = new Solicitud('',[],[],'');
       this.solicitudModelGetId = new Solicitud('',[],[],'');
       this.token = this._usuarioService.getToken();
   }
 
   ngOnInit(): void {
+    let idSolicitud = localStorage.getItem('idSolicitud');
+    localStorage.setItem("idSolicitud", idSolicitud);
     this.getSolicitud();
-
   }
 
   ingresar(proveedor: String) {
     console.log(proveedor)
-    
     this.sChat.login( proveedor );
+  }
+
+  getSolicitudLog(){
+      this._solicitudService.obtenerSolitudesLog(this.token).subscribe(
+        (response) => {
+  
+          this.solicitudModelGet = response.solis;
+          console.log(response);
+        },
+        (error) => {
+          console.log(<any>error);
+        }
+      )
+  }
+
+  getProductosId(idSolicitud){
+    this._solicitudService.obtenerSolicitudesId(idSolicitud, this.token).subscribe (
+      (response) => {
+        console.log(response);
+        localStorage.setItem("idSolicitud", idSolicitud);
+        this.solicitudModelGetId = response.solicitued;
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    )
   }
 
   getSolicitud() {
     this._solicitudService.obtenerSolitudesLog(this.token).subscribe(
       (response) => {
+        this.solicitudModelGet = response.solis;
 
-        this.solicitudModelGet = response.solicitud;
-        console.log(response);
+        this.solicitado = response.solis[0].solicitud;
+        console.log(this.solicitado);
+        //this.oferta = this.solicitudModelGet[0].oferta;
+        this.oferta = response.solis[0].oferta;
+        //console.log(this.solicitudModelGet)
+        console.log(this.oferta);
+        // this.oferta = this.solicitado. ;
+        // console.log(this.solicitado);
+        console.log(this.solicitudModelGet);
+        //console.log(response);
       },
       (error) => {
         console.log(<any>error);
@@ -54,10 +92,11 @@ export class SolicitudComponent implements OnInit {
   }
 
   aceptarSolicitud() {
-    this._solicitudService.aceptarSolicitud(this.token).subscribe(
+    let idSolicitud = localStorage.getItem('idSolicitud');
+    this._solicitudService.aceptarSolicitud(idSolicitud, this.token).subscribe(
       (response) => {
-
-        this.solicitudModelGet = response.solicitud;
+        this.solicitado = response.solis[0]._id;
+        idSolicitud = JSON.parse(response.solis[0]._id);
         console.log(response);
       },
       (error) => {
@@ -67,9 +106,10 @@ export class SolicitudComponent implements OnInit {
   }
 
   aceptarTrato() {
-    this._solicitudService.confirmarTrato(this.token).subscribe(
+    let idTrato = localStorage.getItem('idTrato');
+    this._solicitudService.confirmarTrato(idTrato, this.token).subscribe(
       (response) => {
-
+        localStorage.setItem("idTrato", idTrato);
         this.solicitudModelGet = response.solicitud;
         console.log(response);
       },
@@ -80,7 +120,8 @@ export class SolicitudComponent implements OnInit {
   }
 
   rechazarSolicitud() {
-    this._solicitudService.cancelarSoli(this.token).subscribe(
+    let idSolicitud = localStorage.getItem('idSolicitud');
+    this._solicitudService.cancelarSoli(idSolicitud, this.token).subscribe(
       (response) => {
 
         this.solicitudModelGet = response.solicitud;

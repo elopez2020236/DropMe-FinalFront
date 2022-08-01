@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ChatService } from 'src/app/services/chat.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 
@@ -12,7 +13,7 @@ export class NavbarComponent implements OnInit {
   public isAuthenticated: Observable<any>;
   public role: string;
 
-  constructor(public _usuarioService: UsuarioService) {
+  constructor(public _usuarioService: UsuarioService, public sChat: ChatService) {
     _usuarioService.isAuthenticated.subscribe(token => {
       this.isAuthenticated = token;
     });
@@ -33,5 +34,11 @@ export class NavbarComponent implements OnInit {
       showConfirmButton: false,
       timer: 1500
     })
+  }
+
+  ingresar(proveedor: String) {
+    console.log( proveedor)
+    
+    this.sChat.login( proveedor );
   }
 }

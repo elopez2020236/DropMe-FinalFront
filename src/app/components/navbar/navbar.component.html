@@ -63,7 +63,7 @@
                   <button *ngIf="role ==='Usuario'" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
                     <button *ngIf="!isAuthenticated" class="btn" routerLink="sign-up">Registrarse</button>
                     <button *ngIf="!isAuthenticated" class="btn" routerLink="sign-in">Login</button>
-                    <button *ngIf="isAuthenticated" class="btn" routerLink="sign-in" (click)="VaciarToken()">Cerrar Sesión</button>
+                    <button *ngIf="isAuthenticated" class="btn" routerLink="sign-in" (click)="VaciarToken()" (click)="sChat.logout()">Cerrar Sesión</button>
 
                 </form>
             </div>
