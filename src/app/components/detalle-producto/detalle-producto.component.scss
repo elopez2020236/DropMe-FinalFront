@@ -84,3 +84,36 @@ body{
     height: 220px;
 }
 
+
+#inputFile{
+
+  display: none;
+}
+
+.labelImg{
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  background-color: aliceblue;
+  border-radius: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  cursor: pointer;
+  user-select: none;
+}
+
+.labelImg{
+  width: 3rem;
+  height: 3rem;
+}
+
+.labelImg:active{
+  transform: scale(0.9);
+
+}
+
+.imagenesJeff {
+  align-items: right;
+}
