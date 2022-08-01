@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div class="col-md-12 text-right" >
+            <button type="button" class="btn btn-outline-danger" (click)="sChat.logout()" *ngIf="sChat.usuario.uid">Salir</button>
+        </div>
+        <p>
+            Verificar su cuenta para tradear
+        </p>
+        <button type="button" class="btn btn-outline-secondary" (click)="ingresar('twitter')" *ngIf="!sChat.usuario.uid">Twitter</button>
+        <button type="button" class="btn btn-outline-success" (click)="ingresar('google')" *ngIf="!sChat.usuario.uid">Google</button>
+    </div>
+</div>

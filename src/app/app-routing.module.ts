@@ -9,6 +9,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SolicitudComponent } from './components/solicitud/solicitud.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { VerificacionComponent } from './components/verificacion/verificacion.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'productos', component: ProductosComponent},
   { path: 'pantallaCarga', component:  PantallaCargaComponent},
   { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent},
+  { path: 'verificacion', component: VerificacionComponent},
 
   { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent},
   { path: 'usuario', component: UsuarioComponent }

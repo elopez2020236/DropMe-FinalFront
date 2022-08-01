@@ -7,7 +7,7 @@
         <div class="app-mensajes" id="app-mensajes">
 
             <div class="text-end" *ngFor="let chat of sChat.chats">
-                <span class="badge rounded-pill bg-dark">Pepe</span>
+                <span class="badge rounded-pill bg-dark">{{chat.nombre}}</span>
                 <p>
                     {{chat.mensaje}}
                 </p>

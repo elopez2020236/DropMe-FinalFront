@@ -23,6 +23,7 @@ import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 import { ChatComponent } from './components/chat/chat.component';
+import { VerificacionComponent } from './components/verificacion/verificacion.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ChatComponent } from './components/chat/chat.component';
     PantallaCargaComponent,
 
     ChatComponent,
+      VerificacionComponent,
 
   ],
   imports: [
