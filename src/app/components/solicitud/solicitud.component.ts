@@ -91,46 +91,46 @@ export class SolicitudComponent implements OnInit {
     )
   }
 
-  aceptarSolicitud() {
-    let idSolicitud = localStorage.getItem('idSolicitud');
-    this._solicitudService.aceptarSolicitud(idSolicitud, this.token).subscribe(
-      (response) => {
-        this.solicitado = response.solis[0]._id;
-        idSolicitud = JSON.parse(response.solis[0]._id);
-        console.log(response);
-      },
-      (error) => {
-        console.log(<any>error);
-      }
-    )
-  }
+  // aceptarSolicitud() {
+  //   let idSolicitud = localStorage.getItem('idSolicitud');
+  //   this._solicitudService.aceptarSolicitud(idSolicitud, this.token).subscribe(
+  //     (response) => {
+  //       this.solicitado = response.solis[0]._id;
+  //       idSolicitud = JSON.parse(response.solis[0]._id);
+  //       console.log(response);
+  //     },
+  //     (error) => {
+  //       console.log(<any>error);
+  //     }
+  //   )
+  // }
 
-  aceptarTrato() {
-    let idTrato = localStorage.getItem('idTrato');
-    this._solicitudService.confirmarTrato(idTrato, this.token).subscribe(
-      (response) => {
-        localStorage.setItem("idTrato", idTrato);
-        this.solicitudModelGet = response.solicitud;
-        console.log(response);
-      },
-      (error) => {
-        console.log(<any>error);
-      }
-    )
-  }
+  // aceptarTrato() {
+  //   let idTrato = localStorage.getItem('idTrato');
+  //   this._solicitudService.confirmarTrato(idTrato, this.token).subscribe(
+  //     (response) => {
+  //       localStorage.setItem("idTrato", idTrato);
+  //       this.solicitudModelGet = response.solicitud;
+  //       console.log(response);
+  //     },
+  //     (error) => {
+  //       console.log(<any>error);
+  //     }
+  //   )
+  // }
 
-  rechazarSolicitud() {
-    let idSolicitud = localStorage.getItem('idSolicitud');
-    this._solicitudService.cancelarSoli(idSolicitud, this.token).subscribe(
-      (response) => {
+  // rechazarSolicitud() {
+  //   let idSolicitud = localStorage.getItem('idSolicitud');
+  //   this._solicitudService.cancelarSoli(idSolicitud, this.token).subscribe(
+  //     (response) => {
 
-        this.solicitudModelGet = response.solicitud;
-        console.log(response);
-      },
-      (error) => {
-        console.log(<any>error);
-      }
-    )
-  }
+  //       this.solicitudModelGet = response.solicitud;
+  //       console.log(response);
+  //     },
+  //     (error) => {
+  //       console.log(<any>error);
+  //     }
+  //   )
+  // }
 
 }

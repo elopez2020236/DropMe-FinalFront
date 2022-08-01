@@ -10,7 +10,6 @@ export class SolicitudService {
 
   public url: String = 'http://localhost:3000/api';
   public headersVariable = new HttpHeaders().set('Content-Type', 'application/json');
-
   public token;
 
   constructor(public _http: HttpClient) { }
@@ -33,20 +32,20 @@ export class SolicitudService {
     return this._http.post(this.url + '/generarSolicitud/' + idProducto + '/' + idOferta, parametros, { headers: this.headersVariable});
   }
 
-  aceptarSolicitud(idSolicitud, token): Observable<any> {
-    let headersToken = this.headersVariable.set('Authorization', token);
-    return this._http.put(this.url + '/aceptarSoli/' + idSolicitud, { headers: headersToken})
-  }
+  // aceptarSolicitud(idSolicitud, token): Observable<any> {
+  //   let headersToken = this.headersVariable.set('Authorization', token);
+  //   return this._http.put(this.url + '/aceptarSoli/' + idSolicitud, { headers: headersToken})
+  // }
 
-  confirmarTrato(idTrato, token): Observable<any> {
-    let headersToken = this.headersVariable.set('Authorization', token);
-    return this._http.put(this.url + '/aceptarTratos/' + idTrato, { headers: headersToken})
-  }
+  // confirmarTrato(idTrato, token): Observable<any> {
+  //   let headersToken = this.headersVariable.set('Authorization', token);
+  //   return this._http.put(this.url + '/aceptarTratos/' + idTrato, { headers: headersToken})
+  // }
 
-  cancelarSoli(idSolicitud, token): Observable<any> {
-    let headersToken = this.headersVariable.set('Authorization', token);
-    return this._http.put(this.url + '/rechazarSolicitud/' + idSolicitud, { headers: headersToken})
-  }
+  // cancelarSoli(idSolicitud, token): Observable<any> {
+  //   let headersToken = this.headersVariable.set('Authorization', token);
+  //   return this._http.put(this.url + '/rechazarSolicitud/' + idSolicitud, { headers: headersToken})
+  // }
 
 
 }

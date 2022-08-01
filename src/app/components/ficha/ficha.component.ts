@@ -55,43 +55,43 @@ export class FichaComponent implements OnInit {
     )
   }
 
-  aceptarSolicitud() {
-    this._solicitudService.aceptarSolicitud(this.token).subscribe(
-      (response) => {
+  // aceptarSolicitud() {
+  //   this._solicitudService.aceptarSolicitud(this.token).subscribe(
+  //     (response) => {
 
-        this.solicitudModelGet = response.solicitud;
-        console.log(response);
-      },
-      (error) => {
-        console.log(<any>error);
-      }
-    )
-  }
+  //       this.solicitudModelGet = response.solicitud;
+  //       console.log(response);
+  //     },
+  //     (error) => {
+  //       console.log(<any>error);
+  //     }
+  //   )
+  // }
 
-  aceptarTrato() {
-    this._solicitudService.confirmarTrato(this.token).subscribe(
-      (response) => {
+  // aceptarTrato() {
+  //   this._solicitudService.confirmarTrato(this.token).subscribe(
+  //     (response) => {
 
-        this.solicitudModelGet = response.solicitud;
-        console.log(response);
-      },
-      (error) => {
-        console.log(<any>error);
-      }
-    )
-  }
+  //       this.solicitudModelGet = response.solicitud;
+  //       console.log(response);
+  //     },
+  //     (error) => {
+  //       console.log(<any>error);
+  //     }
+  //   )
+  // }
 
-  rechazarSolicitud() {
-    this._solicitudService.cancelarSoli(this.token).subscribe(
-      (response) => {
+  // rechazarSolicitud() {
+  //   this._solicitudService.cancelarSoli(this.token).subscribe(
+  //     (response) => {
 
-        this.solicitudModelGet = response.solicitud;
-        console.log(response);
-      },
-      (error) => {
-        console.log(<any>error);
-      }
-    )
-  }
+  //       this.solicitudModelGet = response.solicitud;
+  //       console.log(response);
+  //     },
+  //     (error) => {
+  //       console.log(<any>error);
+  //     }
+  //   )
+  // }
 
 }
