@@ -25,6 +25,7 @@ import { environment } from 'src/environments/environment';
 import { ChatComponent } from './components/chat/chat.component';
 import { VerificacionComponent } from './components/verificacion/verificacion.component';
 import { OfertaComponent } from './components/oferta/oferta.component';
+import { ConfirmacionComponent } from './components/confirmacion/confirmacion.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { OfertaComponent } from './components/oferta/oferta.component';
     ChatComponent,
       VerificacionComponent,
       OfertaComponent,
+      ConfirmacionComponent,
 
   ],
   imports: [

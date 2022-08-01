@@ -1,6 +1,15 @@
 .main-container{
-  margin-top: 40px;
-  margin-bottom: 150px;
+  background-color: #212529;
+  padding: 6em;
+  position: relative;
+}
+
+.main-containerdos{
+  background-color: #212529;
+  position: relative;
+  top: 10em;
+  left: 60em;
+  transform: translate(-50%, -50%);
 }
 
 .puntero{
@@ -8,17 +17,15 @@
 }
 
 .chat-window{
-  padding: 10px;
-  width: 300px;
-  height: 400px;
+  width: 600px;
   overflow: hidden;
-  border: 1px solid #4080FF;
+  border: 0.2em solid #34373d;
   border-radius: 20px;
 }
 
 .app-mensajes{
   overflow-y:scroll;
-  height:270px;
+  height:370px;
   background:gray;
   padding: 5px;
 }
@@ -51,4 +58,9 @@
 
 .fadeIn {
   animation-name: fadeIn;
+}
+
+input{
+  width: 600px;
+  height: 50px
 }
