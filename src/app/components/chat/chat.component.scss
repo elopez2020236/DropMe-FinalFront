@@ -26,7 +26,7 @@
 .app-mensajes{
   overflow-y:scroll;
   height:370px;
-  background:gray;
+  background:#212529;
   padding: 5px;
 }
 
@@ -62,5 +62,7 @@
 
 input{
   width: 600px;
-  height: 50px
+  height: 50px;
+  background-color: transparent;
+  border-color: white;
 }
