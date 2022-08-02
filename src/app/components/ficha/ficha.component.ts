@@ -8,6 +8,7 @@ import { SolicitudService } from 'src/app/services/solicitud.service';
 import { UsuarioService } from '../../services/usuario.service';
 import { ChatService } from 'src/app/services/chat.service';
 import Swal from 'sweetalert2';
+import { tratoC } from 'src/app/models/tratoC.model';
 
 @Component({
   selector: 'app-ficha',
@@ -15,83 +16,34 @@ import Swal from 'sweetalert2';
   styleUrls: ['./ficha.component.scss']
 })
 export class FichaComponent implements OnInit {
-
-  public solicitudModelGet: Solicitud;
-  public solicitudModelPost: Solicitud;
-  public solicitudModelGetId: Solicitud;
+  public tratoCModelGet: tratoC;
   public token;
+  public producto1 = [];
+  public producto2 = [];
 
   constructor(
-    private _solicitudService: SolicitudService,
-    private _usuarioService: UsuarioService,
-    public sChat: ChatService
-  ) {
-      this.solicitudModelPost = new Solicitud('',[],[],'');
-      this.solicitudModelGetId = new Solicitud('',[],[],'');
-      this.token = this._usuarioService.getToken();
+    public sUsuario: UsuarioService, private _solicitudService: SolicitudService,) {
+      this.tratoCModelGet = new tratoC('',{},[],{},[], true);
+      this.token = this.sUsuario.getToken();
   }
 
   ngOnInit(): void {
-    this.getSolicitud();
-
+    this.getTratoConf();
   }
 
-  ingresar(proveedor: String) {
-    console.log(proveedor)
-
-    this.sChat.login( proveedor );
-  }
-
-  getSolicitud() {
-    this._solicitudService.obtenerSolitudesLog(this.token).subscribe(
+  getTratoConf(){
+    this._solicitudService.obtenerTratosConf(this.token).subscribe(
       (response) => {
-
-        this.solicitudModelGet = response.solicitud;
+        this.tratoCModelGet = response.userfinded;
+        this.producto1 = response.userfinded.Producto1;
+        this.producto2 = response.userfinded.Producto2;
+        console.log(this.tratoCModelGet);
         console.log(response);
       },
       (error) => {
         console.log(<any>error);
       }
     )
-  }
-
-  // aceptarSolicitud() {
-  //   this._solicitudService.aceptarSolicitud(this.token).subscribe(
-  //     (response) => {
-
-  //       this.solicitudModelGet = response.solicitud;
-  //       console.log(response);
-  //     },
-  //     (error) => {
-  //       console.log(<any>error);
-  //     }
-  //   )
-  // }
-
-  // aceptarTrato() {
-  //   this._solicitudService.confirmarTrato(this.token).subscribe(
-  //     (response) => {
-
-  //       this.solicitudModelGet = response.solicitud;
-  //       console.log(response);
-  //     },
-  //     (error) => {
-  //       console.log(<any>error);
-  //     }
-  //   )
-  // }
-
-  // rechazarSolicitud() {
-  //   this._solicitudService.cancelarSoli(this.token).subscribe(
-  //     (response) => {
-
-  //       this.solicitudModelGet = response.solicitud;
-  //       console.log(response);
-  //     },
-  //     (error) => {
-  //       console.log(<any>error);
-  //     }
-  //   )
-  // }
+}
 
 }

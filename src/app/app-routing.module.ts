@@ -15,6 +15,7 @@ import { VerificacionComponent } from './components/verificacion/verificacion.co
 import { FichaComponent } from './components/ficha/ficha.component';
 import { ValdacionComponent } from './components/valdacion/valdacion.component';
 import { CargaComponent } from './components/carga/carga.component';
+import { TratosComponent } from './components/tratos/tratos.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent},
   { path: 'usuario', component: UsuarioComponent },
   { path: 'valdacion', component: ValdacionComponent},
-  {path: 'carga', component: CargaComponent}
+  {path: 'carga', component: CargaComponent},
+  { path: 'tratos', component: TratosComponent}
 ];
 
 @NgModule({

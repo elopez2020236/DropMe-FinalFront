@@ -28,8 +28,8 @@ export class DetalleProductoComponent implements OnInit {
     private storageService: StorageService
 
   ) {
-   this.productosModelPost = new Productos('','','','',[],[{}],{});
-      this.productosModelGetId = new Productos('','','','',[],[{}],{});
+   this.productosModelPost = new Productos('','','','','',[{}],{});
+      this.productosModelGetId = new Productos('','','','','',[{}],{});
       this.token = this._usuarioService.getToken();
   }
 

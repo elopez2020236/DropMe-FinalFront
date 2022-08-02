@@ -18,7 +18,7 @@ export class ConfirmacionComponent implements OnInit{
   public token;
 
   constructor(public sChat: ChatService, private sSolicitud: SolicitudService, private _productosService: ProductosService,) { 
-    this.productosModelGetId = new Productos('','','','',[],[{}],{});
+    this.productosModelGetId = new Productos('','','','','',[{}],{});
   }
   
   

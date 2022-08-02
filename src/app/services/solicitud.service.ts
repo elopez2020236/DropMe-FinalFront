@@ -46,5 +46,13 @@ export class SolicitudService {
     return this._http.put(this.url + '/rechazarSolicitud/' + idSolicitud, { headers: headersToken})
   }
 
+  obtenerTratosPen(token) : Observable<any> {
+    let headersToken = this.headersVariable.set('Authorization', token);
+    return this._http.get(this.url + '/obtenerTratospendientes', { headers: headersToken });
+  }
 
+  obtenerTratosConf(token) : Observable<any> {
+    let headersToken = this.headersVariable.set('Authorization', token);
+    return this._http.get(this.url + '/obternerTratosLog', { headers: headersToken });
+  }
 }

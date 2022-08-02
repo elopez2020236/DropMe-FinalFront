@@ -29,6 +29,7 @@ import { ConfirmacionComponent } from './components/confirmacion/confirmacion.co
 import { FichaComponent } from './components/ficha/ficha.component';
 import { ValdacionComponent } from './components/valdacion/valdacion.component';
 import { CargaComponent } from './components/carga/carga.component';
+import { TratosComponent } from './components/tratos/tratos.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { CargaComponent } from './components/carga/carga.component';
       FichaComponent,
       ValdacionComponent,
       CargaComponent,
+      TratosComponent,
 
   ],
   imports: [

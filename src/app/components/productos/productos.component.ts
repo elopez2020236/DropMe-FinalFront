@@ -27,8 +27,8 @@ export class ProductosComponent implements OnInit {
     private storageService: StorageService
 
   ) {
-      this.productosModelPost = new Productos('','','','',[],[{}],{});
-      this.productosModelGetId = new Productos('','','','',[],[{}],{});
+      this.productosModelPost = new Productos('','','','','',[{}],{});
+      this.productosModelGetId = new Productos('','','','','',[{}],{});
       this.token = this._usuarioService.getToken();
    }
 
@@ -93,7 +93,7 @@ export class ProductosComponent implements OnInit {
         this.productosModelPost.nombre = '';
         this.productosModelPost.categoria = '';
         this.productosModelPost.precio = '';
-        this.productosModelPost.fotos = [];
+        this.productosModelPost.fotos = '';
         //this.productosModelPost.idFactura = {};
         //this.productosModelPost.idUsuario = {};
         this.getProductos();

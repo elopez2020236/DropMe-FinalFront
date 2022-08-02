@@ -123,6 +123,22 @@ export class SolicitudComponent implements OnInit {
      )
   }
 
+
+  rechazarSolicitud(idSolicitud) {
+     
+    this._solicitudService.cancelarSoli(idSolicitud, this.token).subscribe(
+      (response) => {
+       let idSolicitud = localStorage.getItem('idSolicitud');
+       this.solicitado = response.solis[0]._id;
+        idSolicitud = JSON.parse(response.solis[0]._id);
+        console.log(response);
+      },
+     (error) => {
+        console.log(<any>error);
+      }
+    )
+ }
+ 
   // rechazarSolicitud() {
   //   let idSolicitud = localStorage.getItem('idSolicitud');
   //   this._solicitudService.cancelarSoli(idSolicitud, this.token).subscribe(

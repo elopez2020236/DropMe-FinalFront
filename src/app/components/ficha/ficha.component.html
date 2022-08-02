@@ -1,19 +1,36 @@
 
 
-    <div class="container">
+<div class="col-lg-4 mb-5" *ngFor="let prod1 of producto1">
 
-        <div class="cardnatu">
-            <img src="img/img1.jpg">
-            <h4>Naturaleza</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
-            <a href="#">Leer más</a>
-        </div>
-
-        <div class="cardtecno">
-            <img src="img/img3.jpg">
-            <h4>Tecnología</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
-            <a href="#">Leer más</a>
+    <div class="card h-100 shadow border-0">
+        <img class="card-img-top" src="https://unade.edu.mx/wp-content/uploads/2019/12/calidad.png" alt="...">
+        <div class="card-body p-4">
+            <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ prod1.nombre }}</div>
+            <h5 class="card-title mb-3">{{ prod1.nombre}}</h5>
+            <p class="card-text mb-0">
+                Su precio es de Q {{ prod1.precio }}.00.
+            </p>
+            <p class="card-text mb-0">
+                Pertenece a la categoría de "{{ prod1.categoria }}".
+            </p>
         </div>
     </div>
+</div>
+
+<div class="col-lg-4 mb-5" *ngFor="let prod2 of producto2">
+
+    <div class="card h-100 shadow border-0">
+        <img class="card-img-top" src="https://unade.edu.mx/wp-content/uploads/2019/12/calidad.png" alt="...">
+        <div class="card-body p-4">
+            <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ prod2.nombre }}</div>
+            <h5 class="card-title mb-3">{{ prod2.nombre}}</h5>
+            <p class="card-text mb-0">
+                Su precio es de Q {{  prod2.precio }}.00.
+            </p>
+            <p class="card-text mb-0">
+                Pertenece a la categoría de "{{ prod2.categoria }}".
+            </p>
+        </div>
+    </div>
+</div>
 
