@@ -5,8 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchCategoriaPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(productos: any, busqueda: any): any {
+  
+  if(busqueda == undefined){
+    return productos;
+  }else{
+    return productos.filter(productos=>{
+      return productos.categoria.toLowerCase().includes(busqueda.toLowerCase());
+    })
   }
-
-}
+}}

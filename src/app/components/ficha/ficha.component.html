@@ -1,36 +1,42 @@
-
-
-<div class="col-lg-4 mb-5" *ngFor="let prod1 of producto1">
-
-    <div class="card h-100 shadow border-0">
-        <img class="card-img-top" src="https://unade.edu.mx/wp-content/uploads/2019/12/calidad.png" alt="...">
-        <div class="card-body p-4">
-            <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ prod1.nombre }}</div>
-            <h5 class="card-title mb-3">{{ prod1.nombre}}</h5>
-            <p class="card-text mb-0">
-                Su precio es de Q {{ prod1.precio }}.00.
-            </p>
-            <p class="card-text mb-0">
-                Pertenece a la categoría de "{{ prod1.categoria }}".
-            </p>
-        </div>
+<div class="bg-dark py-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6">
+          <div class="text-center">
+              <h2 class="display-5 fw-bolder text-white mb-2">Tratos Confirmados</h2>
+              <p class="lead fw-normal text-white-50 mb-7">Tus tratos confirmados</p>
+                        </div>
+                      </div>
+  </div>
+  <div class="imgamazon">
+    <div class="tama">
+  <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjitsvinger.co.za%2Fwp-content%2Fuploads%2F2018%2F04%2FAmazon-Logo-1024x373.png&f=1&nofb=1">
     </div>
-</div>
-
-<div class="col-lg-4 mb-5" *ngFor="let prod2 of producto2">
-
-    <div class="card h-100 shadow border-0">
-        <img class="card-img-top" src="https://unade.edu.mx/wp-content/uploads/2019/12/calidad.png" alt="...">
-        <div class="card-body p-4">
-            <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ prod2.nombre }}</div>
-            <h5 class="card-title mb-3">{{ prod2.nombre}}</h5>
-            <p class="card-text mb-0">
-                Su precio es de Q {{  prod2.precio }}.00.
-            </p>
-            <p class="card-text mb-0">
-                Pertenece a la categoría de "{{ prod2.categoria }}".
-            </p>
-        </div>
-    </div>
-</div>
-
+  </div>
+  
+  <div class="cartas">
+    <div class="col-lg-4 mb-5" *ngFor="let prod1 of producto1">
+  
+      <div class="card h-100 shadow border-0">
+          <img class="card-img-top" src="https://unade.edu.mx/wp-content/uploads/2019/12/calidad.png" alt="...">
+          <div class="card-body p-4">
+              <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ prod1.nombre }}</div>
+              <h5 class="card-title mb-3">{{ prod1.nombre}}</h5>
+              <p class="card-text mb-0">Su precio es de Q {{ prod1.precio }}.00.</p>
+              <p class="card-text mb-0">Pertenece a la categoría de "{{ prod1.categoria }}".</p>
+          </div>
+      </div>
+  </div>
+  <div>.............</div>
+  <div class="col-lg-4 mb-5" *ngFor="let prod2 of producto2">
+      <div class="card h-100 shadow border-0">
+          <img class="card-img-top" src="https://unade.edu.mx/wp-content/uploads/2019/12/calidad.png" alt="...">
+          <div class="card-body p-4">
+              <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ prod2.nombre }}</div>
+              <h5 class="card-title mb-3">{{ prod2.nombre}}</h5>
+              <p class="card-text mb-0">Su precio es de Q {{  prod2.precio }}.00.</p>
+              <p class="card-text mb-0">Pertenece a la categoría de "{{ prod2.categoria }}".</p>
+          </div>
+      </div>
+  </div>
+  </div>
+  </div>

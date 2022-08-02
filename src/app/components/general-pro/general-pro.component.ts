@@ -17,6 +17,7 @@ export class GeneralProComponent implements OnInit {
   public productosModelPost: Productos;
   public productosModelGetId: Productos;
   public token;
+  public searchCategoria;
 
   constructor(
     private _productosService: ProductosService,

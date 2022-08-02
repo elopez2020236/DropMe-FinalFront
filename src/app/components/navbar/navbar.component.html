@@ -1,89 +1,102 @@
 <div class="header-inner bg-dark">
-    <div class="container-fluid px-lg-5">
-        <nav class="navbar navbar-expand-lg my-navbar">
-            <a class="navbar-brand" routerLink="home">
-                <span class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080"
-          zoomAndPan="magnify" viewBox="0 0 810 809.999993" height="1080" preserveAspectRatio="xMidYMid meet"
-          version="1.0" class="img-fluid" style="width:50px; margin:-3px 0px 0px 0px;">
-          <defs>
-            <filter x="0%" y="0%" width="100%" height="100%" id="id1">
-              <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" color-interpolation-filters="sRGB" />
-            </filter>
-            <filter x="0%" y="0%" width="100%" height="100%" id="id2">
-              <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.2126 0.7152 0.0722 0 0"
-                color-interpolation-filters="sRGB" />
-            </filter>
-            <image x="0" y="0" width="1052"
-              id="id3" height="992" preserveAspectRatio="xMidYMid meet" />
-            <mask id="id4">
-              <g filter="url(#id1)">
-                <g filter="url(#id2)" transform="matrix(0.61597, 0, 0, 0.615423, 80.999999, 99.630015)">
-                  <image x="0" y="0" width="1052"
+  <div class="container-fluid px-lg-5">
+      <nav class="navbar navbar-expand-lg my-navbar">
+          <a class="navbar-brand" routerLink="home">
+              <span class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080"
+        zoomAndPan="magnify" viewBox="0 0 810 809.999993" height="1080" preserveAspectRatio="xMidYMid meet"
+        version="1.0" class="img-fluid" style="width:50px; margin:-3px 0px 0px 0px;">
+        <defs>
+          <filter x="0%" y="0%" width="100%" height="100%" id="id1">
+            <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" color-interpolation-filters="sRGB" />
+          </filter>
+          <filter x="0%" y="0%" width="100%" height="100%" id="id2">
+            <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.2126 0.7152 0.0722 0 0"
+              color-interpolation-filters="sRGB" />
+          </filter>
+          <image x="0" y="0" width="1052"
+            id="id3" height="992" preserveAspectRatio="xMidYMid meet" />
+          <mask id="id4">
+            <g filter="url(#id1)">
+              <g filter="url(#id2)" transform="matrix(0.61597, 0, 0, 0.615423, 80.999999, 99.630015)">
+                <image x="0" y="0" width="1052"
 
-                    height="992" preserveAspectRatio="xMidYMid meet" />
-                </g>
+                  height="992" preserveAspectRatio="xMidYMid meet" />
               </g>
-            </mask>
-            <image x="0" y="0" width="1052"
-
-              id="id5" height="992" preserveAspectRatio="xMidYMid meet" />
-          </defs>
-          <g mask="url(#id4)">
-            <g transform="matrix(0.61597, 0, 0, 0.615423, 80.999999, 99.630015)">
-              <image x="0" y="0" width="1052" height="992" preserveAspectRatio="xMidYMid meet" />
             </g>
+          </mask>
+          <image x="0" y="0" width="1052"
+
+            id="id5" height="992" preserveAspectRatio="xMidYMid meet" />
+        </defs>
+        <g mask="url(#id4)">
+          <g transform="matrix(0.61597, 0, 0, 0.615423, 80.999999, 99.630015)">
+            <image x="0" y="0" width="1052" height="992" preserveAspectRatio="xMidYMid meet" />
           </g>
-        </svg>DropMe</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"><i class="fas fa-bars" style="margin:5px 0px 0px 0px;"></i></span>
+        </g>
+      </svg>DropMe</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"><i class="fas fa-bars" style="margin:5px 0px 0px 0px;"></i></span>
 </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav m-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="/inicio">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/solicitud">Solicitud</a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a class="nav-link" routerLink="/generalPro">Explora</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav m-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" routerLink="/inicio">Inicio</a>
                   </li>
-                    <li *ngIf="role === 'ADMIN'" class="nav-item">
-                        <a class="nav-link" routerLink="usuarios">Ver Usuarios</a>
-                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" routerLink="/solicitud">Solicitud</a>
+                  </li>
 
-                </ul>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/generalPro">Explora</a>
+                </li>
+                  <li *ngIf="role === 'ADMIN'" class="nav-item">
+                      <a class="nav-link" routerLink="usuarios">Ver Usuarios</a>
+                  </li>
+
+              </ul>
 
 
-                <form class="form-inline my-2 my-lg-0">
-                  <button *ngIf="role ==='Usuario'" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
-                    <button *ngIf="!isAuthenticated" class="btn" routerLink="sign-up">Registrarse</button>
-                    <button *ngIf="!isAuthenticated" class="btn" routerLink="sign-in">Login</button>
-                    <button *ngIf="isAuthenticated" class="btn" routerLink="sign-in" (click)="VaciarToken()" (click)="sChat.logout()">Cerrar Sesión</button>
+              <form class="form-inline my-2 my-lg-0">
+                <button *ngIf="role ==='Usuario'" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
+                  <button *ngIf="!isAuthenticated" class="btn" routerLink="sign-up">Registrarse</button>
+                  <button *ngIf="!isAuthenticated" class="btn" routerLink="sign-in">Login</button>
+                  <button *ngIf="isAuthenticated" class="btn" routerLink="sign-in" (click)="VaciarToken()" (click)="sChat.logout()">Cerrar SesiÃ³n</button>
 
-                </form>
-            </div>
-        </nav>
+              </form>
+          </div>
+      </nav>
 
-    </div>
+  </div>
 </div>
 
 <div class="offcanvas offcanvas-end bg-dark py-4" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 id="offcanvasRightLabel" class="display-5 fw-bolder text-white mb-2">Perfil</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <img style="width: 100px; height: 100px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.icon-icons.com%2Ficons2%2F1580%2FPNG%2F512%2F2849831-account-avatar-interface-multimedia-person-profile-user_107987.png&f=1&nofb=1">
-      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-      <button type="button" class="btn btn-danger" routerLink="/usuario">Cuenta</button>
+<div class="offcanvas-header">
+  <h5 id="offcanvasRightLabel" class="display-5 fw-bolder text-white mb-2">Perfil</h5>
+  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+  <img style="width: 100px; height: 100px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.icon-icons.com%2Ficons2%2F1580%2FPNG%2F512%2F2849831-account-avatar-interface-multimedia-person-profile-user_107987.png&f=1&nofb=1">
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    
+      
+    
       <button type="button" class="btn btn-warning" routerLink="/verificacion">Solicitudes</button>
       <button type="button" class="btn btn-success" routerLink="/productos">Mis Productos</button>
-      <button type="button" class="btn btn-success" routerLink="/tratos">Tratos Pendientes</button>
-      <button type="button" class="btn btn-success" routerLink="/ficha">Tratos Confirmados</button>
+    
+    <div class="btn-group" role="group">
+      <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        ...
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        
+      <li><button type="button" class="btn btn-success" routerLink="/tratos">Tratos Pendientes</button></li>
+      <li><button type="button" class="btn btn-success" routerLink="/ficha">Tratos Confirmados</button></li>
+    </ul>
     </div>
+      
+    
   </div>
+</div>
