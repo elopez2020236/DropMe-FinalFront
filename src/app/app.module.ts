@@ -30,6 +30,7 @@ import { FichaComponent } from './components/ficha/ficha.component';
 import { ValdacionComponent } from './components/valdacion/valdacion.component';
 import { CargaComponent } from './components/carga/carga.component';
 import { TratosComponent } from './components/tratos/tratos.component';
+import { SearchCategoriaPipe } from './pipes/search-categoria.pipe';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { TratosComponent } from './components/tratos/tratos.component';
       ValdacionComponent,
       CargaComponent,
       TratosComponent,
+      SearchCategoriaPipe,
 
   ],
   imports: [
