@@ -13,6 +13,8 @@ import { SolicitudComponent } from './components/solicitud/solicitud.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { VerificacionComponent } from './components/verificacion/verificacion.component';
 import { FichaComponent } from './components/ficha/ficha.component';
+import { ValdacionComponent } from './components/valdacion/valdacion.component';
+import { CargaComponent } from './components/carga/carga.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -29,8 +31,9 @@ const routes: Routes = [
   { path: 'confirmacion', component: ConfirmacionComponent},
   { path: 'ficha', component: FichaComponent},
   { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent},
-  { path: 'usuario', component: UsuarioComponent }
-
+  { path: 'usuario', component: UsuarioComponent },
+  { path: 'valdacion', component: ValdacionComponent},
+  {path: 'carga', component: CargaComponent}
 ];
 
 @NgModule({

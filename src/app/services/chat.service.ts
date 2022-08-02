@@ -12,7 +12,7 @@ import firebase from 'firebase/compat/app';
   providedIn: 'root'
 })
 export class ChatService {
-  public url: String = 'http://localhost:3000/api';
+  public url: String = 'https://dropmee.herokuapp.com/api';
   private itemsCollection: AngularFirestoreCollection<Mensaje>;
  // public perfilModelGet: Usuario;
   public token;
@@ -60,18 +60,6 @@ export class ChatService {
       headers: this.headersVariable,
     });
   }
-
-  // getUsuarioL() {
-  //   this.sChat.usuarioLogeado(this.token).subscribe(
-  //     (response) => {
-  //       this.perfilModelGet = response.usario;
-  //       console.log(response);
-  //     },
-  //     (err) => {
-  //       console.log(<any>err)
-  //     }
-  //   )
-  // }
 
   agregarMensaje(texto: string){
     let identidad = localStorage.getItem('identidad');

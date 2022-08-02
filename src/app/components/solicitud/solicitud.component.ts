@@ -20,6 +20,7 @@ export class SolicitudComponent implements OnInit {
   public token;
   public oferta = [];
   public solicitado = [];
+  idSolicitud;
 
   constructor(
     private _solicitudService: SolicitudService,
@@ -33,8 +34,8 @@ export class SolicitudComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let idSolicitud = localStorage.getItem('idSolicitud');
-    localStorage.setItem("idSolicitud", idSolicitud);
+    this.idSolicitud = localStorage.getItem('idSolicitud');
+    localStorage.setItem("idSolicitud", this.idSolicitud);
     this.getSolicitud();
   }
 
@@ -76,6 +77,8 @@ export class SolicitudComponent implements OnInit {
 
         this.solicitado = response.solis[0].solicitud;
         console.log(this.solicitado);
+        this.idSolicitud = response.solis[0]._id;
+        localStorage.setItem("idSolicitud", this.idSolicitud);
         //this.oferta = this.solicitudModelGet[0].oferta;
         this.oferta = response.solis[0].oferta;
         //console.log(this.solicitudModelGet)
@@ -91,33 +94,34 @@ export class SolicitudComponent implements OnInit {
     )
   }
 
-  // aceptarSolicitud() {
-  //   let idSolicitud = localStorage.getItem('idSolicitud');
-  //   this._solicitudService.aceptarSolicitud(idSolicitud, this.token).subscribe(
-  //     (response) => {
-  //       this.solicitado = response.solis[0]._id;
-  //       idSolicitud = JSON.parse(response.solis[0]._id);
-  //       console.log(response);
-  //     },
-  //     (error) => {
-  //       console.log(<any>error);
-  //     }
-  //   )
-  // }
+   aceptarSolicitud(idSolicitud) {
+     
+     this._solicitudService.aceptarSolicitud(idSolicitud, this.token).subscribe(
+       (response) => {
+        let idSolicitud = localStorage.getItem('idSolicitud');
+        this.solicitado = response.solis[0]._id;
+         idSolicitud = JSON.parse(response.solis[0]._id);
+         console.log(response);
+       },
+      (error) => {
+         console.log(<any>error);
+       }
+     )
+  }
 
-  // aceptarTrato() {
-  //   let idTrato = localStorage.getItem('idTrato');
-  //   this._solicitudService.confirmarTrato(idTrato, this.token).subscribe(
-  //     (response) => {
-  //       localStorage.setItem("idTrato", idTrato);
-  //       this.solicitudModelGet = response.solicitud;
-  //       console.log(response);
-  //     },
-  //     (error) => {
-  //       console.log(<any>error);
-  //     }
-  //   )
-  // }
+   aceptarTrato() {
+     let idTrato = localStorage.getItem('idTrato');
+    this._solicitudService.confirmarTrato(idTrato, this.token).subscribe(
+       (response) => {
+         localStorage.setItem("idTrato", idTrato);
+         this.solicitudModelGet = response.solicitud;
+         console.log(response);
+       },
+       (error) => {
+         console.log(<any>error);
+       }
+     )
+  }
 
   // rechazarSolicitud() {
   //   let idSolicitud = localStorage.getItem('idSolicitud');
